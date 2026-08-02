@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using AuthService.DbContexts;
 using AuthService.IFactory;
 using AuthService.TenantFactory;
+using AuthService.Repository;
+using AuthService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +24,8 @@ builder.Services.AddDbContextFactory<ChatApplicationDbContext>(options =>
 });
 
 builder.Services.AddScoped<IDbChatApplicationContextFactory, ChatApplicationDbContextFactory>();
-
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<IAuthService, AuthServices>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
