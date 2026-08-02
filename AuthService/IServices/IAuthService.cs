@@ -6,4 +6,5 @@ public interface IAuthService
 {
     Task SaveCredential(SaveCredentialBO request);
     Task<LoginResponseBO> Login(LoginRequest request);
+    Task<LoginResponseBO> RefreshToken(RefreshTokenRequestBO request);
 }

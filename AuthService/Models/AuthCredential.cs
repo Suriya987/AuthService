@@ -16,5 +16,11 @@ public partial class AuthCredential
     public DateTime CreatedAt { get; set; }
 
     public DateTime UpdatedAt { get; set; }
+
     public string Email { get; set; } = null!;
+
+    public Guid? DeviceId { get; set; }
+
+    public string? DeviceName { get; set; }
 }
+

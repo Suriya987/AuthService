@@ -1,6 +1,6 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using AuthService.Models;
+using AuthService.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace AuthService.DbContexts;
@@ -32,6 +32,8 @@ public partial class ChatApplicationDbContext : DbContext
 
             entity.Property(e => e.AuthCredentialId).HasColumnName("authCredentialId");
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
+            entity.Property(e => e.DeviceName).HasMaxLength(100);
+            entity.Property(e => e.Email).HasMaxLength(255);
             entity.Property(e => e.PasswordChangedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnName("passwordChangedAt");
