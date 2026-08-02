@@ -1,5 +1,6 @@
 ﻿using AuthService.BOs;
 using AuthService.Services;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthService.Controllers;
@@ -26,5 +27,14 @@ public class AuthController : ControllerBase
         {
             Message = "Credential saved successfully"
         });
+    }
+
+    [HttpPost("login")]
+    public async Task<ActionResult<LoginResponseBO>> Login(
+    LoginRequest request)
+    {
+        var result = await _authService.Login(request);
+
+        return Ok(result);
     }
 }
