@@ -75,7 +75,7 @@ public class AuthServices : IAuthService
 
             CreatedAt = DateTime.UtcNow,
 
-            ExpiresAt = DateTime.UtcNow.AddDays(30),
+            ExpiresAt = DateTime.UtcNow.AddSeconds(30),
 
             RevokedAt = null
         };
@@ -85,6 +85,8 @@ public class AuthServices : IAuthService
            
         // Return plain refresh token
         response.RefreshToken = refreshToken;
+        response.UserId = (int)credential.UserId;
+        response.Username = null;
 
         return response;
     }

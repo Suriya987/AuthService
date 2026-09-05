@@ -7,5 +7,9 @@
         public string RefreshToken { get; set; } = string.Empty;
 
         public DateTime Expiry { get; set; }
+
+        public string Username { get; set; }
+
+        public int? UserId { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using AuthService.Models.Entities;
+using AuthService.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace AuthService.DbContexts;
