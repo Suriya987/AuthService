@@ -36,7 +36,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContextFactory<ChatApplicationDbContext>(options =>
 {
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("UserServiceDb"));
+        builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
 builder.Services.AddScoped<IDbChatApplicationContextFactory, ChatApplicationDbContextFactory>();
